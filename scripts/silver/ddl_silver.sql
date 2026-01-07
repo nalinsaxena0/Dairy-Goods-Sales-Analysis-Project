@@ -50,16 +50,12 @@ CREATE TABLE silver.sales (
 
     quantity_value          FLOAT,
     quantity_unit           NVARCHAR(20),
-
-    price_per_unit_value    FLOAT,
-    price_per_unit_unit     NVARCHAR(20),
+    price_per_unit          FLOAT,
 
     quantity_sold_value     FLOAT,
     quantity_sold_unit      NVARCHAR(20),
 
-    selling_price_value     FLOAT,
-    selling_price_unit      NVARCHAR(20),
-
+    selling_price           FLOAT,
     revenue                 FLOAT,     -- always INR
     total_value             FLOAT,     -- always INR
 
