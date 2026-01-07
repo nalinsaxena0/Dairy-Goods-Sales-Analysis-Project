@@ -47,22 +47,17 @@ GO
 CREATE TABLE silver.sales (
     sale_id                 INT IDENTITY(1,1) PRIMARY KEY,
     product_key             INT,
-
     quantity_value          FLOAT,
     quantity_unit           NVARCHAR(20),
     price_per_unit          FLOAT,
-
     quantity_sold_value     FLOAT,
     quantity_sold_unit      NVARCHAR(20),
-
-    selling_price           FLOAT,
+	selling_price           FLOAT,
     revenue                 FLOAT,     -- always INR
     total_value             FLOAT,     -- always INR
-
-    customer_location       NVARCHAR(100),
+	customer_location       NVARCHAR(100),
     sales_channel           NVARCHAR(50),
-
-    FOREIGN KEY (product_key) REFERENCES silver.products(product_key)
+	FOREIGN KEY (product_key) REFERENCES silver.products(product_key)
 );
 GO
 
@@ -72,16 +67,12 @@ GO
 
 CREATE TABLE silver.inventory (
     product_key             INT PRIMARY KEY,
-
-    stock_value             FLOAT,
+	stock_value             FLOAT,
     stock_unit              NVARCHAR(20),
-
-    min_stock_value         FLOAT,
+	min_stock_value         FLOAT,
     min_stock_unit          NVARCHAR(20),
-
-    reorder_quantity_value  FLOAT,
+	reorder_quantity_value  FLOAT,
     reorder_quantity_unit   NVARCHAR(20),
-
-    FOREIGN KEY (product_key) REFERENCES silver.products(product_key)
+	FOREIGN KEY (product_key) REFERENCES silver.products(product_key)
 );
 GO
