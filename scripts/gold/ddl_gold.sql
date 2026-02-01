@@ -65,9 +65,9 @@ GO
 CREATE VIEW gold.dim_dates AS
 WITH DateRange AS (
     SELECT  
-        MIN(record_date) AS start_date,
-        MAX(record_date) AS end_date
-    FROM silver.farms
+        MIN(production_date) AS start_date,
+        MAX(production_date) AS end_date
+    FROM silver.products
 ),
 Tally AS (
     SELECT ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) - 1 AS n
